@@ -5,48 +5,43 @@
 
 <meta charset="UTF-8">
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<meta
-  name="theme-color"
-  content="#0d1b2a"
->
+<title>Cultural Village 2026 — Embassy Participation Form</title>
 
-<title>
-Cultural Village 2026 — Embassy Participation Form
-</title>
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
 <style>
+
+:root{
+
+  --bg:#101820;
+  --panel:#17212b;
+  --field:#1d2935;
+  --border:#334252;
+  --border-hover:#526477;
+
+  --text:#f5f7f9;
+  --dim:#aeb8c2;
+  --faint:#687685;
+
+  --gold:#c9a45c;
+  --gold-hover:#b99149;
+  --gold-dim:rgba(201,164,92,.13);
+
+  --success:#43b581;
+  --error:#df6570;
+
+}
 
 *{
   box-sizing:border-box;
 }
-
-:root{
-
-  --navy:#0d1b2a;
-  --navy2:#122437;
-  --panel:#16283a;
-  --field:#1b3043;
-
-  --border:#34495c;
-  --border2:#4a6073;
-
-  --white:#ffffff;
-  --text:#edf2f6;
-  --muted:#aebbc6;
-  --faint:#718292;
-
-  --gold:#c9a45c;
-  --gold2:#b88f42;
-
-  --success:#48b27a;
-  --danger:#df6872;
-}
-
 
 html,
 body{
@@ -54,115 +49,98 @@ body{
   margin:0;
   padding:0;
 
-  width:100%;
-  min-height:100%;
-
-  background:
-    linear-gradient(
-      145deg,
-      #0b1724 0%,
-      #0f1f2e 50%,
-      #101c29 100%
-    );
-
+  background:var(--bg);
   color:var(--text);
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family:'Inter',sans-serif;
 
-  -webkit-font-smoothing:antialiased;
 }
-
 
 body{
 
   min-height:100vh;
 
-  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+
 }
 
 
-/************************************************
- PROGRESS
-************************************************/
+/* ================================
+   PROGRESS
+================================ */
 
-.progress{
-
-  position:fixed;
-
-  top:0;
-  left:0;
+.progress-track{
 
   width:100%;
-  height:4px;
+  height:3px;
 
-  background:#1b2b39;
+  background:#1d2832;
 
-  z-index:999;
+  position:sticky;
+  top:0;
+
+  z-index:100;
+
 }
 
-
-.progress-bar{
+.progress-fill{
 
   height:100%;
-
   width:0%;
 
   background:var(--gold);
 
-  transition:
-    width .35s ease;
+  transition:width .35s ease;
+
 }
 
 
-/************************************************
- CONTAINER
-************************************************/
+/* ================================
+   MAIN
+================================ */
 
-.wrapper{
+.shell{
+
+  flex:1;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:45px 20px 65px;
+
+}
+
+.stage{
 
   width:100%;
+  max-width:640px;
 
-  max-width:720px;
-
-  margin:0 auto;
-
-  padding:
-    55px 20px 70px;
 }
 
 
-.container{
-
-  width:100%;
-}
-
-
-/************************************************
- STEPS
-************************************************/
+/* ================================
+   STEPS
+================================ */
 
 .step{
 
   display:none;
 
-  animation:
-    fade .3s ease;
-}
+  animation:fadeIn .35s ease;
 
+}
 
 .step.active{
   display:block;
 }
 
-
-@keyframes fade{
+@keyframes fadeIn{
 
   from{
     opacity:0;
-    transform:translateY(8px);
+    transform:translateY(10px);
   }
 
   to{
@@ -173,168 +151,185 @@ body{
 }
 
 
-/************************************************
- COVER
-************************************************/
+/* ================================
+   COVER
+================================ */
 
-.eyebrow{
+.cover-eyebrow{
 
   color:var(--gold);
 
   font-size:12px;
+  font-weight:800;
 
-  font-weight:700;
-
-  letter-spacing:2px;
+  letter-spacing:.16em;
 
   text-transform:uppercase;
 
   margin-bottom:18px;
+
 }
 
+.cover h1{
 
-h1{
+  margin:0 0 20px;
 
-  margin:0 0 18px;
+  font-size:clamp(30px,6vw,46px);
 
-  color:var(--white);
+  line-height:1.08;
 
-  font-size:
-    clamp(32px,7vw,52px);
+  font-weight:800;
 
-  line-height:1.05;
+  letter-spacing:-.02em;
 
-  letter-spacing:-1.5px;
 }
 
+.cover .meta{
 
-.meta{
-
-  color:var(--muted);
+  margin-bottom:22px;
 
   font-size:14px;
-
   font-weight:600;
 
-  margin-bottom:26px;
 }
 
+.divider{
 
-.meta .gold{
+  color:var(--faint);
+
+  margin:0 9px;
+
+}
+
+.place{
   color:var(--gold);
 }
 
+.cover p{
 
-.cover-text{
+  max-width:57ch;
 
-  color:var(--muted);
+  margin:0 0 14px;
+
+  color:var(--dim);
 
   font-size:15px;
 
   line-height:1.75;
 
-  margin-bottom:16px;
 }
 
 
-/************************************************
- STEP HEADER
-************************************************/
+/* ================================
+   STEP TITLE
+================================ */
 
-.step-number{
+.step-count{
 
   color:var(--faint);
 
   font-size:11px;
 
-  font-weight:700;
+  font-weight:800;
 
-  letter-spacing:2px;
+  letter-spacing:.1em;
 
-  margin-bottom:12px;
+  margin-bottom:13px;
+
 }
 
+.step-label{
 
-.step-title{
+  display:flex;
+  align-items:center;
 
-  margin:0 0 30px;
+  gap:10px;
 
-  color:var(--white);
+  margin-bottom:27px;
 
-  font-size:
-    clamp(21px,5vw,28px);
+}
+
+.step-label h2{
+
+  margin:0;
+
+  font-size:clamp(20px,3.4vw,25px);
 
   line-height:1.2;
 
-  font-weight:700;
+  font-weight:800;
+
+  letter-spacing:-.01em;
+
+  text-transform:uppercase;
+
 }
 
 
-.required{
+/* ================================
+   REQUIRED
+================================ */
 
-  display:inline-flex;
+.req-badge{
 
+  width:19px;
+  height:19px;
+
+  flex-shrink:0;
+
+  display:flex;
   align-items:center;
   justify-content:center;
 
-  width:18px;
-  height:18px;
-
-  margin-left:7px;
-
   border-radius:50%;
 
-  background:#293b4c;
+  background:#293542;
 
-  color:#cbd4db;
+  color:#c1cbd4;
 
   font-size:11px;
 
-  vertical-align:3px;
 }
 
 
-/************************************************
- FIELDS
-************************************************/
+/* ================================
+   FIELDS
+================================ */
 
-.field{
-
-  margin-bottom:24px;
+.field-block{
+  margin-bottom:23px;
 }
 
+.field-label{
 
-label.field-label{
+  display:flex;
+  align-items:center;
 
-  display:block;
+  gap:8px;
 
   margin-bottom:9px;
 
-  color:var(--muted);
+  color:var(--dim);
 
   font-size:12px;
 
-  font-weight:700;
+  font-weight:800;
 
-  letter-spacing:.6px;
+  letter-spacing:.045em;
 
   text-transform:uppercase;
+
 }
 
-
-input[type=text],
-input[type=number],
+input[type="text"],
+input[type="number"],
 textarea{
 
   width:100%;
 
-  min-height:50px;
+  padding:14px 16px;
 
-  padding:14px 15px;
-
-  border:
-    1.5px solid
-    var(--border);
+  border:1.5px solid var(--border);
 
   border-radius:8px;
 
@@ -342,137 +337,122 @@ textarea{
 
   background:var(--field);
 
-  color:var(--white);
+  color:var(--text);
 
-  font-family:inherit;
+  font-family:'Inter',sans-serif;
 
-  font-size:16px;
+  font-size:15px;
 
-  -webkit-appearance:none;
+  transition:.15s ease;
 
-  transition:
-    border .15s ease,
-    background .15s ease;
 }
 
-
-textarea{
-
-  min-height:125px;
-
-  resize:vertical;
+input:hover,
+textarea:hover{
+  border-color:var(--border-hover);
 }
-
 
 input:focus,
 textarea:focus{
 
   border-color:var(--gold);
 
-  background:#20384c;
-}
+  background:#202d39;
 
+}
 
 input::placeholder,
 textarea::placeholder{
 
   color:var(--faint);
+
+}
+
+textarea{
+
+  min-height:110px;
+
+  resize:vertical;
+
 }
 
 
-/************************************************
- CHECKBOX
-************************************************/
+/* ================================
+   CHECKBOXES
+================================ */
 
-.options{
+.check-list{
 
   display:flex;
-
   flex-direction:column;
 
   gap:9px;
+
 }
 
-
-.option{
+.check-item{
 
   display:flex;
-
   align-items:center;
 
-  min-height:50px;
+  gap:13px;
 
-  padding:12px 14px;
-
-  border:
-    1.5px solid
-    var(--border);
-
-  border-radius:8px;
+  padding:13px 15px;
 
   background:var(--field);
 
+  border:1.5px solid var(--border);
+
+  border-radius:8px;
+
   cursor:pointer;
 
-  -webkit-tap-highlight-color:transparent;
-
   transition:.15s ease;
+
 }
 
+.check-item:hover{
 
-.option:active{
+  border-color:var(--border-hover);
 
-  transform:scale(.99);
 }
 
-
-.option.selected{
+.check-item.checked{
 
   border-color:var(--gold);
 
-  background:
-    rgba(201,164,92,.12);
+  background:var(--gold-dim);
+
 }
 
-
-.option input{
-
-  position:absolute;
-
-  opacity:0;
-
-  pointer-events:none;
+.check-item input{
+  display:none;
 }
 
-
-.box{
+.check-box{
 
   width:19px;
   height:19px;
 
-  flex:0 0 19px;
+  flex-shrink:0;
 
-  margin-right:13px;
-
-  border:
-    1.5px solid
-    var(--border2);
+  border:1.5px solid var(--border-hover);
 
   border-radius:5px;
 
   position:relative;
+
 }
 
-
-.option.selected .box{
+.check-item.checked .check-box{
 
   background:var(--gold);
 
   border-color:var(--gold);
+
 }
 
-
-.option.selected .box:after{
+.check-item.checked .check-box::after{
 
   content:'';
 
@@ -482,286 +462,266 @@ textarea::placeholder{
   top:1px;
 
   width:5px;
-  height:10px;
+  height:9px;
 
-  border:
-    solid white;
+  border:solid #fff;
 
-  border-width:
-    0 2px 2px 0;
+  border-width:0 2px 2px 0;
 
   transform:rotate(45deg);
+
+}
+
+.check-item span.label{
+
+  font-size:14px;
+
+  font-weight:500;
+
 }
 
 
-.option-text{
+/* ================================
+   YES / NO
+================================ */
 
-  color:var(--text);
+.choice-list{
+
+  display:flex;
+  flex-direction:column;
+
+  gap:9px;
+
+}
+
+.choice-item{
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+
+  padding:13px 15px;
+
+  background:var(--field);
+
+  border:1.5px solid var(--border);
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  transition:.15s ease;
+
+}
+
+.choice-item:hover{
+
+  border-color:var(--border-hover);
+
+}
+
+.choice-item.selected{
+
+  border-color:var(--gold);
+
+  background:var(--gold-dim);
+
+}
+
+.choice-letter{
+
+  width:24px;
+  height:24px;
+
+  border-radius:5px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#293542;
+
+  color:var(--dim);
+
+  font-size:12px;
+
+  font-weight:800;
+
+}
+
+.choice-item.selected .choice-letter{
+
+  background:var(--gold);
+
+  color:#fff;
+
+}
+
+.choice-item span.label{
 
   font-size:14px;
 
   font-weight:600;
 
-  line-height:1.4;
 }
 
 
-/************************************************
- YES NO
-************************************************/
+/* ================================
+   CONDITIONAL
+================================ */
 
-.choice{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:10px;
-}
-
-
-.choice-button{
-
-  display:flex;
-
-  align-items:center;
-
-  min-height:54px;
-
-  padding:13px 15px;
-
-  border:
-    1.5px solid
-    var(--border);
-
-  border-radius:8px;
-
-  background:var(--field);
-
-  cursor:pointer;
-
-  -webkit-tap-highlight-color:transparent;
-}
-
-
-.choice-button.selected{
-
-  border-color:var(--gold);
-
-  background:
-    rgba(201,164,92,.12);
-}
-
-
-.letter{
-
-  width:27px;
-  height:27px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  margin-right:13px;
-
-  border-radius:6px;
-
-  background:#293b4c;
-
-  color:var(--muted);
-
-  font-size:12px;
-
-  font-weight:700;
-}
-
-
-.choice-button.selected .letter{
-
-  background:var(--gold);
-
-  color:white;
-}
-
-
-/************************************************
- CONDITIONAL
-************************************************/
-
-.conditional{
+.conditional-block{
 
   display:none;
 
-  margin-top:22px;
+  margin-top:18px;
+
 }
 
-
-.conditional.show{
+.conditional-block.show{
 
   display:block;
+
+  animation:fadeIn .3s ease;
+
 }
 
 
-/************************************************
- UPLOAD
-************************************************/
+/* ================================
+   UPLOAD
+================================ */
 
-.upload{
+.upload-box{
 
   display:flex;
 
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
 
-  min-height:170px;
-
-  padding:25px;
+  padding:35px 20px;
 
   text-align:center;
 
-  border:
-    1.5px dashed
-    var(--border2);
+  border:1.5px dashed var(--border-hover);
 
   border-radius:10px;
 
   background:var(--field);
 
   cursor:pointer;
+
+  transition:.15s ease;
+
 }
 
+.upload-box:hover{
 
-.upload input{
+  border-color:var(--gold);
+
+  background:#202a34;
+
+}
+
+.upload-box input{
   display:none;
 }
 
-
-.upload-title{
-
-  margin-top:10px;
-
-  font-size:14px;
-
-  font-weight:700;
+.upload-box .icon{
+  margin-bottom:10px;
 }
 
+.upload-box .main-txt{
 
-.upload-sub{
+  font-size:14px;
+  font-weight:700;
+
+}
+
+.upload-box .sub-txt{
 
   margin-top:8px;
 
   color:var(--faint);
 
-  font-size:12px;
+  font-size:11.5px;
 
-  line-height:1.5;
 }
 
-
-.file{
+.file-chip{
 
   display:none;
 
   align-items:center;
-
   justify-content:space-between;
 
   gap:10px;
 
+  padding:11px 15px;
+
   margin-top:10px;
 
-  padding:12px 14px;
-
-  border:
-    1.5px solid
-    var(--gold);
+  border:1.5px solid var(--gold);
 
   border-radius:8px;
 
   background:var(--field);
 
   font-size:13px;
+
 }
 
-
-.file.show{
+.file-chip.show{
   display:flex;
 }
 
+.file-chip button{
 
-.file button{
-
-  border:0;
-
+  border:none;
   background:none;
 
-  color:var(--muted);
-
-  font-size:18px;
+  color:var(--faint);
 
   cursor:pointer;
+
+  font-size:16px;
+
 }
 
 
-/************************************************
- ERROR
-************************************************/
+/* ================================
+   NAVIGATION
+================================ */
 
-.error{
-
-  display:none;
-
-  margin-top:8px;
-
-  color:var(--danger);
-
-  font-size:12px;
-
-  font-weight:600;
-}
-
-
-.error.show{
-  display:block;
-}
-
-
-/************************************************
- BUTTONS
-************************************************/
-
-.navigation{
+.nav-row{
 
   display:flex;
-
   align-items:center;
 
-  gap:12px;
+  gap:14px;
 
-  margin-top:30px;
+  margin-top:32px;
+
 }
 
+.btn-primary{
 
-.primary{
+  display:inline-flex;
+  align-items:center;
 
-  min-height:50px;
+  gap:9px;
 
-  padding:
-    13px 24px;
+  padding:14px 26px;
 
-  border:0;
-
+  border:none;
   border-radius:8px;
 
   background:var(--gold);
 
   color:#101820;
 
-  font-family:inherit;
+  font-family:'Inter',sans-serif;
 
   font-size:14px;
 
@@ -769,108 +729,135 @@ textarea::placeholder{
 
   cursor:pointer;
 
-  -webkit-tap-highlight-color:transparent;
+  transition:.15s ease;
+
 }
 
+.btn-primary:hover{
 
-.primary:active{
+  background:var(--gold-hover);
+
+  color:#fff;
+
+}
+
+.btn-primary:active{
 
   transform:scale(.98);
+
 }
 
+.btn-primary:disabled{
 
-.primary:disabled{
-
-  opacity:.6;
+  opacity:.65;
 
   cursor:wait;
+
 }
 
+.btn-secondary{
 
-.secondary{
+  padding:14px 10px;
 
-  min-height:50px;
-
-  padding:
-    10px 12px;
-
-  border:0;
-
+  border:none;
   background:none;
 
-  color:var(--muted);
+  color:var(--dim);
 
-  font-family:inherit;
+  font-family:'Inter',sans-serif;
 
   font-size:14px;
 
   font-weight:600;
 
   cursor:pointer;
+
+}
+
+.btn-secondary:hover{
+  color:#fff;
 }
 
 
-/************************************************
- SUCCESS
-************************************************/
+/* ================================
+   ERRORS
+================================ */
+
+.err-txt{
+
+  display:none;
+
+  margin-top:9px;
+
+  color:var(--error);
+
+  font-size:12px;
+
+  font-weight:600;
+
+}
+
+.err-txt.show{
+  display:block;
+}
+
+
+/* ================================
+   SUCCESS
+================================ */
 
 .success-icon{
 
-  width:58px;
-  height:58px;
+  width:54px;
+  height:54px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   margin-bottom:22px;
 
-  border:
-    1.5px solid
-    var(--gold);
+  border:1.5px solid var(--gold);
 
   border-radius:50%;
 
-  background:
-    rgba(201,164,92,.12);
+  background:var(--gold-dim);
+
 }
 
+.success h1{
 
-.success-title{
+  margin:0 0 12px;
 
-  margin:0 0 14px;
-
-  color:white;
-
-  font-size:31px;
+  font-size:29px;
 
   font-weight:800;
+
 }
 
+.success p{
 
-.success-text{
+  max-width:52ch;
 
-  color:var(--muted);
+  margin:0 0 6px;
+
+  color:var(--dim);
 
   font-size:15px;
 
   line-height:1.7;
+
 }
 
-
-.reference{
+.ref-chip{
 
   display:inline-block;
 
-  margin-top:20px;
+  margin-top:17px;
 
-  padding:
-    11px 15px;
+  padding:10px 16px;
 
-  border:
-    1.5px solid
-    var(--border);
+  border:1.5px solid var(--border);
 
   border-radius:7px;
 
@@ -878,63 +865,34 @@ textarea::placeholder{
 
   color:var(--gold);
 
-  font-family:
-    monospace;
+  font-family:monospace;
 
   font-size:13px;
 
-  letter-spacing:.5px;
-}
-
-
-/************************************************
- MOBILE
-************************************************/
-
-@media(max-width:600px){
-
-  .wrapper{
-
-    padding:
-      45px 16px 50px;
-  }
-
-
-  h1{
-
-    font-size:36px;
-
-    letter-spacing:-1px;
-  }
-
-
-  .cover-text{
-
-    font-size:14px;
-
-    line-height:1.7;
-  }
-
-
-  .navigation{
-
-    width:100%;
-  }
-
-
-  .primary{
-
-    flex:1;
-  }
-
-
-  .secondary{
-
-    flex:0 0 auto;
-  }
+  letter-spacing:.04em;
 
 }
 
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:480px){
+
+  .shell{
+
+    padding:28px 16px 40px;
+
+  }
+
+  .btn-primary{
+
+    padding:13px 20px;
+
+  }
+
+}
 
 </style>
 
@@ -944,351 +902,351 @@ textarea::placeholder{
 <body>
 
 
-<div class="progress">
+<div class="progress-track">
 
   <div
-    class="progress-bar"
-    id="progress">
+    class="progress-fill"
+    id="progressFill">
   </div>
 
 </div>
 
 
-<div class="wrapper">
+<div class="shell">
 
-<div class="container">
+<div class="stage">
 
 
-<!-- ==================================================
- STEP 0
-================================================== -->
+<!-- =====================================================
+     STEP 0
+===================================================== -->
 
-<section
-  class="step active"
-  data-step="0"
->
+<div class="step active" data-step="0">
 
-<div class="eyebrow">
-CULTURAL VILLAGE 2026
+<div class="cover">
+
+<div class="cover-eyebrow">
+Cultural Village 2026
 </div>
-
 
 <h1>
 Embassy Participation Form
 </h1>
 
-
 <div class="meta">
 
 27–30 October 2026
 
-&nbsp;&nbsp;|&nbsp;&nbsp;
+<span class="divider">|</span>
 
-<span class="gold">
+<span class="place">
 Baku, Azerbaijan
 </span>
 
 </div>
 
-
-<p class="cover-text">
-
-Cultural Village is an open-air cultural festival
-bringing together embassies and international
-institutions to showcase national culture,
-arts, traditions and creative heritage.
-
+<p>
+Cultural Village is an open-air cultural festival where
+embassies from around the world come together to showcase
+their national culture, arts, traditions and creative heritage
+through interactive experiences.
 </p>
 
-
-<p class="cover-text">
-
-This form collects the information required for
-country stands, cultural activities, stage
-performances, exhibition materials and visitor
-engagement.
-
+<p>
+This form is designed to collect the key information required
+for participation, country stands, cultural activities, stage
+performances, exhibition materials, technical requirements and
+visitor engagement. Please complete all relevant sections as
+accurately as possible.
 </p>
 
-
-<div class="navigation">
+<div class="nav-row">
 
 <button
-  class="primary"
-  onclick="goTo(1)"
->
+type="button"
+class="btn-primary"
+onclick="goTo(1)">
 
 Start
-&nbsp; →
+
+<span>→</span>
 
 </button>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
 
-<!-- ==================================================
- STEP 1
-================================================== -->
+<!-- =====================================================
+     STEP 1
+===================================================== -->
 
-<section
-  class="step"
-  data-step="1"
->
+<div class="step" data-step="1">
 
-<div class="step-number">
+<div class="step-count">
 STEP 1 OF 6
 </div>
 
+<div class="step-label">
 
-<h2 class="step-title">
-Embassy & Contact Information
+<h2>
+Embassy &amp; Contact Information
 </h2>
 
+</div>
 
-<div class="field">
 
-<label class="field-label">
-Country <span class="required">*</span>
-</label>
+<div class="field-block">
+
+<div class="field-label">
+
+Country
+
+<span class="req-badge">*</span>
+
+</div>
 
 <input
-  id="country"
-  type="text"
-  autocomplete="country"
-  placeholder="e.g. Azerbaijan"
->
+type="text"
+id="country"
+placeholder="e.g. Azerbaijan">
 
 <div
-  class="error"
-  id="err-country"
->
+class="err-txt"
+id="err-country">
+
 Please enter the country name.
-</div>
 
 </div>
 
+</div>
 
-<div class="field">
 
-<label class="field-label">
+
+<div class="field-block">
+
+<div class="field-label">
+
 Embassy / Institution
-<span class="required">*</span>
-</label>
+
+<span class="req-badge">*</span>
+
+</div>
 
 <input
-  id="embassy"
-  type="text"
-  autocomplete="organization"
-  placeholder="e.g. Embassy of Azerbaijan"
->
+type="text"
+id="embassy"
+placeholder="e.g. Embassy of Azerbaijan">
 
 <div
-  class="error"
-  id="err-embassy"
->
+class="err-txt"
+id="err-embassy">
+
 Please enter the embassy or institution name.
-</div>
 
 </div>
 
+</div>
 
-<div class="field">
 
-<label class="field-label">
+
+<div class="field-block">
+
+<div class="field-label">
+
 Number of Representatives
-<span class="required">*</span>
-</label>
+
+<span class="req-badge">*</span>
+
+</div>
 
 <input
-  id="repCount"
-  type="number"
-  inputmode="numeric"
-  min="1"
-  max="999"
-  placeholder="e.g. 4"
->
+type="number"
+id="repCount"
+min="1"
+placeholder="e.g. 4">
 
 <div
-  class="error"
-  id="err-repCount"
->
+class="err-txt"
+id="err-repCount">
+
 Please enter the number of representatives.
-</div>
 
 </div>
 
+</div>
 
-<div class="navigation">
+
+<div class="nav-row">
 
 <button
-  class="primary"
-  onclick="validateStep(1)"
->
-Next Page →
+type="button"
+class="btn-primary"
+onclick="validateStep(1)">
+
+Next Page <span>→</span>
+
 </button>
 
 <button
-  class="secondary"
-  onclick="goTo(0)"
->
+type="button"
+class="btn-secondary"
+onclick="goTo(0)">
+
 Back
+
 </button>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- ==================================================
- STEP 2
-================================================== -->
+<!-- =====================================================
+     STEP 2
+===================================================== -->
 
-<section
-  class="step"
-  data-step="2"
->
+<div class="step" data-step="2">
 
-<div class="step-number">
+<div class="step-count">
 STEP 2 OF 6
 </div>
 
+<div class="step-label">
 
-<h2 class="step-title">
-Country Stand <span class="required">*</span>
+<h2>
+Country Stand
 </h2>
+
+<span class="req-badge">*</span>
+
+</div>
 
 
 <div
-  class="options"
-  id="group-stand"
->
+class="check-list"
+id="group-stand">
 
-<label class="option">
+
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Cultural heritage"
->
+type="checkbox"
+value="Cultural heritage">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 Cultural heritage
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Traditional costumes"
->
+type="checkbox"
+value="Traditional costumes">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 Traditional costumes
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Handicrafts"
->
+type="checkbox"
+value="Handicrafts">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 Handicrafts
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Music & instruments"
->
+type="checkbox"
+value="Music & instruments">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
-Music & instruments
+<span class="label">
+Music &amp; instruments
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Culinary culture"
->
+type="checkbox"
+value="Culinary culture">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 Culinary culture
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Tourism"
->
+type="checkbox"
+value="Tourism">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 Tourism
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="National art"
->
+type="checkbox"
+value="National art">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 National art
 </span>
 
 </label>
 
 
-<label class="option">
+<label class="check-item">
 
 <input
-  type="checkbox"
-  value="Other"
->
+type="checkbox"
+value="Other">
 
-<span class="box"></span>
+<span class="check-box"></span>
 
-<span class="option-text">
+<span class="label">
 Other
 </span>
 
@@ -1298,240 +1256,186 @@ Other
 
 
 <div
-  class="error"
-  id="err-stand"
->
+class="err-txt"
+id="err-group-stand">
+
 Please select at least one option.
+
 </div>
 
 
-<div class="navigation">
+<div class="nav-row">
 
 <button
-  class="primary"
-  onclick="validateStep(2)"
->
-Next Page →
+type="button"
+class="btn-primary"
+onclick="validateStep(2)">
+
+Next Page <span>→</span>
+
 </button>
 
 <button
-  class="secondary"
-  onclick="goTo(1)"
->
+type="button"
+class="btn-secondary"
+onclick="goTo(1)">
+
 Back
+
 </button>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- ==================================================
- STEP 3
-================================================== -->
+<!-- =====================================================
+     STEP 3
+===================================================== -->
 
-<section
-  class="step"
-  data-step="3"
->
+<div class="step" data-step="3">
 
-<div class="step-number">
+<div class="step-count">
 STEP 3 OF 6
 </div>
 
+<div class="step-label">
 
-<h2 class="step-title">
-Interactive Experience
-<span class="required">*</span>
+<h2>
+What Interactive Experience Will You Offer Visitors?
 </h2>
 
+<span class="req-badge">*</span>
+
+</div>
+
 
 <div
-  class="options"
-  id="group-interactive"
->
+class="check-list"
+id="group-interactive">
 
-<label class="option">
 
-<input
-  type="checkbox"
-  value="Workshop"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Workshop
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Workshop">
+<span class="check-box"></span>
+<span class="label">Workshop</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Craft"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Craft
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Craft">
+<span class="check-box"></span>
+<span class="label">Craft</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Traditional Game"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Traditional Game
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Traditional Game">
+<span class="check-box"></span>
+<span class="label">Traditional Game</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Music"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Music
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Music">
+<span class="check-box"></span>
+<span class="label">Music</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Dance"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Dance
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Dance">
+<span class="check-box"></span>
+<span class="label">Dance</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Demonstration"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Demonstration
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Demonstration">
+<span class="check-box"></span>
+<span class="label">Demonstration</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Other"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Other
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Other">
+<span class="check-box"></span>
+<span class="label">Other</span>
 </label>
 
 </div>
 
 
 <div
-  class="error"
-  id="err-interactive"
->
+class="err-txt"
+id="err-group-interactive">
+
 Please select at least one option.
+
 </div>
 
 
-<div class="navigation">
+<div class="nav-row">
 
 <button
-  class="primary"
-  onclick="validateStep(3)"
->
-Next Page →
+type="button"
+class="btn-primary"
+onclick="validateStep(3)">
+
+Next Page <span>→</span>
+
 </button>
 
 <button
-  class="secondary"
-  onclick="goTo(2)"
->
+type="button"
+class="btn-secondary"
+onclick="goTo(2)">
+
 Back
+
 </button>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- ==================================================
- STEP 4
-================================================== -->
+<!-- =====================================================
+     STEP 4
+===================================================== -->
 
-<section
-  class="step"
-  data-step="4"
->
+<div class="step" data-step="4">
 
-<div class="step-number">
+<div class="step-count">
 STEP 4 OF 6
 </div>
 
+<div class="step-label">
 
-<h2 class="step-title">
-Stage Programme
-<span class="required">*</span>
+<h2>
+Will Your Country Participate in the Stage Programme?
 </h2>
 
+<span class="req-badge">*</span>
+
+</div>
+
 
 <div
-  class="choice"
-  id="group-stage"
->
+class="choice-list"
+id="group-stage">
+
 
 <div
-  class="choice-button"
-  data-value="Yes"
-  onclick="selectStage(this)"
->
+class="choice-item"
+data-value="Yes"
+onclick="selectChoice(this,'stage')">
 
-<span class="letter">
-A
-</span>
+<span class="choice-letter">A</span>
 
-<span>
+<span class="label">
 Yes
 </span>
 
@@ -1539,16 +1443,13 @@ Yes
 
 
 <div
-  class="choice-button"
-  data-value="No"
-  onclick="selectStage(this)"
->
+class="choice-item"
+data-value="No"
+onclick="selectChoice(this,'stage')">
 
-<span class="letter">
-B
-</span>
+<span class="choice-letter">B</span>
 
-<span>
+<span class="label">
 No
 </span>
 
@@ -1558,590 +1459,499 @@ No
 
 
 <div
-  class="error"
-  id="err-stage"
->
+class="err-txt"
+id="err-group-stage">
+
 Please select an option.
+
 </div>
 
 
-<div
-  class="conditional"
-  id="performanceBlock"
->
 
-<label class="field-label">
+<div
+class="conditional-block"
+id="performanceBlock">
+
+
+<div
+class="field-label"
+style="margin-top:22px;">
+
 Performance Type
-<span class="required">*</span>
-</label>
+
+<span class="req-badge">*</span>
+
+</div>
 
 
 <div
-  class="options"
-  id="group-performance"
->
+class="check-list"
+id="group-performance">
 
-<label class="option">
 
-<input
-  type="checkbox"
-  value="Traditional Dance"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Traditional Dance
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Traditional Dance">
+<span class="check-box"></span>
+<span class="label">Traditional Dance</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Music"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Music
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Music">
+<span class="check-box"></span>
+<span class="label">Music</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Vocal"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Vocal
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Vocal">
+<span class="check-box"></span>
+<span class="label">Vocal</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Instrumental"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Instrumental
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Instrumental">
+<span class="check-box"></span>
+<span class="label">Instrumental</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Costume Presentation"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Costume Presentation
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Costume Presentation">
+<span class="check-box"></span>
+<span class="label">Costume Presentation</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Other"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Other
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Other">
+<span class="check-box"></span>
+<span class="label">Other</span>
 </label>
 
 </div>
 
 
 <div
-  class="error"
-  id="err-performance"
->
+class="err-txt"
+id="err-group-performance">
+
 Please select at least one performance type.
-</div>
 
 </div>
 
+</div>
 
-<div class="navigation">
+
+
+<div class="nav-row">
 
 <button
-  class="primary"
-  onclick="validateStep(4)"
->
-Next Page →
+type="button"
+class="btn-primary"
+onclick="validateStep(4)">
+
+Next Page <span>→</span>
+
 </button>
 
 <button
-  class="secondary"
-  onclick="goTo(3)"
->
+type="button"
+class="btn-secondary"
+onclick="goTo(3)">
+
 Back
+
 </button>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- ==================================================
- STEP 5
-================================================== -->
+<!-- =====================================================
+     STEP 5
+===================================================== -->
 
-<section
-  class="step"
-  data-step="5"
->
+<div class="step" data-step="5">
 
-<div class="step-number">
+<div class="step-count">
 STEP 5 OF 6
 </div>
 
+<div class="step-label">
 
-<h2 class="step-title">
-Display & Branding Materials
-<span class="required">*</span>
+<h2>
+Display &amp; Branding Materials
 </h2>
 
+<span class="req-badge">*</span>
+
+</div>
+
 
 <div
-  class="options"
-  id="group-branding"
->
+class="check-list"
+id="group-branding">
 
-<label class="option">
 
-<input
-  type="checkbox"
-  value="Roll-up/banner"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Roll-up / Banner
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Roll-up/banner">
+<span class="check-box"></span>
+<span class="label">Roll-up/banner</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Posters"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Posters
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Posters">
+<span class="check-box"></span>
+<span class="label">Posters</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Brochures"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Brochures
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Brochures">
+<span class="check-box"></span>
+<span class="label">Brochures</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Video"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Video
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Video">
+<span class="check-box"></span>
+<span class="label">Video</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Handicrafts"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Handicrafts
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Handicrafts">
+<span class="check-box"></span>
+<span class="label">Handicrafts</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Costumes"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Costumes
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Costumes">
+<span class="check-box"></span>
+<span class="label">Costumes</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Souvenirs"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Souvenirs
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Souvenirs">
+<span class="check-box"></span>
+<span class="label">Souvenirs</span>
 </label>
 
 
-<label class="option">
-
-<input
-  type="checkbox"
-  value="Other"
->
-
-<span class="box"></span>
-
-<span class="option-text">
-Other
-</span>
-
+<label class="check-item">
+<input type="checkbox" value="Other">
+<span class="check-box"></span>
+<span class="label">Other</span>
 </label>
 
 </div>
 
 
 <div
-  class="error"
-  id="err-branding"
->
+class="err-txt"
+id="err-group-branding">
+
 Please select at least one option.
+
 </div>
 
 
-<div class="navigation">
+<div class="nav-row">
 
 <button
-  class="primary"
-  onclick="validateStep(5)"
->
-Next Page →
+type="button"
+class="btn-primary"
+onclick="validateStep(5)">
+
+Next Page <span>→</span>
+
 </button>
 
 <button
-  class="secondary"
-  onclick="goTo(4)"
->
+type="button"
+class="btn-secondary"
+onclick="goTo(4)">
+
 Back
+
 </button>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- ==================================================
- STEP 6
-================================================== -->
+<!-- =====================================================
+     STEP 6
+===================================================== -->
 
-<section
-  class="step"
-  data-step="6"
->
+<div class="step" data-step="6">
 
-<div class="step-number">
+<div class="step-count">
 STEP 6 OF 6
 </div>
 
 
-<h2 class="step-title">
-Final Information
-</h2>
+<div class="field-block">
 
+<div class="field-label">
 
-<div class="field">
-
-<label class="field-label">
 Photo / Sketch
-<span class="required">*</span>
-</label>
+
+<span class="req-badge">*</span>
+
+</div>
 
 
 <label
-  class="upload"
-  id="uploadBox"
->
+class="upload-box"
+id="uploadBox">
+
 
 <input
-  type="file"
-  id="fileInput"
-  accept="image/jpeg,image/png,application/pdf"
->
+type="file"
+id="fileInput"
+accept="image/jpeg,image/png,application/pdf">
 
+
+<div class="icon">
 
 <svg
-  width="30"
-  height="30"
-  viewBox="0 0 24 24"
-  fill="none"
->
+width="26"
+height="26"
+viewBox="0 0 24 24"
+fill="none">
 
 <path
-  d="M12 16V4M12 4L7 9M12 4L17 9"
-  stroke="#aebbc6"
-  stroke-width="1.7"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-/>
+d="M12 16V4M12 4L7 9M12 4L17 9"
+stroke="#aeb8c2"
+stroke-width="1.7"
+stroke-linecap="round"
+stroke-linejoin="round"/>
 
 <path
-  d="M4 16V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V16"
-  stroke="#aebbc6"
-  stroke-width="1.7"
-  stroke-linecap="round"
-/>
+d="M4 16V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V16"
+stroke="#aeb8c2"
+stroke-width="1.7"
+stroke-linecap="round"/>
 
 </svg>
 
-
-<div class="upload-title">
-Tap to choose a file
 </div>
 
 
-<div class="upload-sub">
-Maximum 8 MB<br>
-JPG, PNG or PDF
+<div class="main-txt">
+
+Click to choose a file or drag here
+
+</div>
+
+
+<div class="sub-txt">
+
+Maximum size: 10 MB.
+Accepted: JPG, PNG, PDF.
+
 </div>
 
 </label>
 
 
 <div
-  class="file"
-  id="fileBox"
->
+class="file-chip"
+id="fileChip">
 
-<span id="fileName">
-</span>
+<span id="fileName"></span>
 
 <button
-  onclick="removeFile(event)"
->
-×
+type="button"
+onclick="clearFile(event)">
+
+✕
+
 </button>
 
 </div>
 
 
 <div
-  class="error"
-  id="err-file"
->
-Please attach a photo or sketch.
-</div>
+class="err-txt"
+id="err-file">
+
+Please attach a photo or sketch of your stand.
 
 </div>
 
+</div>
 
-<div class="field">
 
-<label class="field-label">
-Additional Requests & Suggestions
-</label>
+
+<div class="field-block">
+
+<div class="field-label">
+
+Additional Requests &amp; Suggestions
+
+</div>
 
 <textarea
-  id="notes"
-  placeholder="Technical requirements, space preferences or additional notes..."
-></textarea>
+id="notes"
+placeholder="Any technical requirements, space preferences, or notes for the organisers..."></textarea>
 
 </div>
 
 
-<div class="navigation">
+
+<div class="nav-row">
 
 <button
-  class="primary"
-  id="submitButton"
-  onclick="submitForm()"
->
-Submit →
+type="button"
+class="btn-primary"
+id="submitButton"
+onclick="submitForm()">
+
+Submit <span>→</span>
+
 </button>
 
 <button
-  class="secondary"
-  onclick="goTo(5)"
->
+type="button"
+class="btn-secondary"
+onclick="goTo(5)">
+
 Back
+
 </button>
 
 </div>
 
-</section>
+</div>
 
 
 
-<!-- ==================================================
- SUCCESS
-================================================== -->
+<!-- =====================================================
+     SUCCESS
+===================================================== -->
 
-<section
-  class="step"
-  data-step="7"
->
+<div class="step" data-step="7">
+
+<div class="success">
+
 
 <div class="success-icon">
 
 <svg
-  width="25"
-  height="25"
-  viewBox="0 0 24 24"
-  fill="none"
->
+width="22"
+height="22"
+viewBox="0 0 24 24"
+fill="none">
 
 <path
-  d="M4 12.5L9.5 18L20 6"
-  stroke="#c9a45c"
-  stroke-width="2.2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-/>
+d="M4 12.5L9.5 18L20 6"
+stroke="#c9a45c"
+stroke-width="2.2"
+stroke-linecap="round"
+stroke-linejoin="round"/>
 
 </svg>
 
 </div>
 
 
-<h2 class="success-title">
-Registration Received
-</h2>
+<h1>
+Registration received
+</h1>
 
 
-<p class="success-text">
-
-Thank you for registering your embassy's
-participation in Cultural Village 2026.
-
-Our team will review your submission and
-contact you regarding stand assignment
-and technical details.
-
+<p>
+Thank you for registering your embassy's participation
+in Cultural Village 2026. Our team will review your
+submission and contact you with stand assignment and
+technical details.
 </p>
 
 
 <div
-  class="reference"
-  id="reference"
->
+class="ref-chip"
+id="refChip">
 </div>
 
-</section>
+</div>
+
+</div>
 
 
 </div>
 </div>
-
 
 
 <script>
 
-/************************************************
- GLOBAL
-************************************************/
+/* =====================================================
+   GOOGLE APPS SCRIPT API
+===================================================== */
+
+const API_URL =
+'https://script.google.com/macros/s/AKfycbw1uDVC7vc_DmaTtjGZiPCQsg95XKQgUd1Idt6-5QmGJ8t22OdmnCHRy1r8jKObWKCB/exec';
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+const totalSteps = 6;
 
 let currentStep = 0;
 
-const TOTAL_STEPS = 6;
 
+function updateProgress(step){
 
-/************************************************
- NAVIGATION
-************************************************/
+  const pct =
+    step === 0
+      ? 0
+      : Math.min(
+          100,
+          (step / totalSteps) * 100
+        );
+
+  document
+    .getElementById('progressFill')
+    .style.width =
+    pct + '%';
+
+}
+
 
 function goTo(step){
 
   document
     .querySelectorAll('.step')
-    .forEach(function(el){
-
-      el.classList.remove('active');
-
-    });
+    .forEach(
+      s => s.classList.remove('active')
+    );
 
 
   const target =
     document.querySelector(
-      '.step[data-step="' +
-      step +
-      '"]'
+      `.step[data-step="${step}"]`
     );
 
 
-  if(!target){
-    return;
-  }
+  if(!target) return;
 
 
   target.classList.add('active');
 
   currentStep = step;
-
 
   updateProgress(step);
 
@@ -2154,53 +1964,31 @@ function goTo(step){
 }
 
 
-function updateProgress(step){
-
-  let percent = 0;
-
-
-  if(step > 0 && step <= TOTAL_STEPS){
-
-    percent =
-      (step / TOTAL_STEPS) * 100;
-
-  }
-
-
-  document
-    .getElementById('progress')
-    .style.width =
-    percent + '%';
-
-}
-
-
-/************************************************
- CHECKBOXES
-************************************************/
+/* =====================================================
+   CHECKBOXES
+===================================================== */
 
 document
-  .querySelectorAll('.option')
-  .forEach(function(option){
+  .querySelectorAll('.check-item')
+  .forEach(item => {
 
-    option.addEventListener(
+    const input =
+      item.querySelector('input');
+
+
+    item.addEventListener(
       'click',
-      function(event){
+      e => {
 
-        event.preventDefault();
-
-        const input =
-          option.querySelector(
-            'input'
-          );
+        e.preventDefault();
 
 
         input.checked =
           !input.checked;
 
 
-        option.classList.toggle(
-          'selected',
+        item.classList.toggle(
+          'checked',
           input.checked
         );
 
@@ -2210,53 +1998,91 @@ document
   });
 
 
-/************************************************
- GET CHECKED
-************************************************/
+/* =====================================================
+   YES / NO
+===================================================== */
 
-function getChecked(group){
+function selectChoice(el, groupId){
+
+  document
+    .querySelectorAll(
+      `#group-${groupId} .choice-item`
+    )
+    .forEach(
+      c => c.classList.remove('selected')
+    );
+
+
+  el.classList.add('selected');
+
+
+  document
+    .getElementById(
+      `err-group-${groupId}`
+    )
+    .classList.remove('show');
+
+
+  if(groupId === 'stage'){
+
+    const block =
+      document.getElementById(
+        'performanceBlock'
+      );
+
+
+    if(el.dataset.value === 'Yes'){
+
+      block.classList.add('show');
+
+    }else{
+
+      block.classList.remove('show');
+
+
+      document
+        .querySelectorAll(
+          '#group-performance .check-item'
+        )
+        .forEach(c => {
+
+          c.classList.remove('checked');
+
+          c.querySelector(
+            'input'
+          ).checked = false;
+
+        });
+
+    }
+
+  }
+
+}
+
+
+/* =====================================================
+   GET CHECKED VALUES
+===================================================== */
+
+function checkedValues(groupId){
 
   return Array
     .from(
       document.querySelectorAll(
-        '#group-' +
-        group +
-        ' input:checked'
+        `#group-${groupId} input:checked`
       )
     )
-    .map(function(input){
-
-      return input.value;
-
-    });
+    .map(
+      i => i.value
+    );
 
 }
 
 
-/************************************************
- ERROR
-************************************************/
-
-function error(id, show){
-
-  const el =
-    document.getElementById(id);
-
-  if(!el){
-    return;
-  }
-
-  el.classList.toggle(
-    'show',
-    show
-  );
-
-}
-
-
-/************************************************
- VALIDATION
-************************************************/
+/* =====================================================
+   VALIDATION
+===================================================== */
 
 function validateStep(step){
 
@@ -2266,48 +2092,45 @@ function validateStep(step){
   if(step === 1){
 
     const country =
-      document
-        .getElementById('country')
-        .value
-        .trim();
-
+      document.getElementById('country');
 
     const embassy =
-      document
-        .getElementById('embassy')
-        .value
-        .trim();
+      document.getElementById('embassy');
+
+    const repCount =
+      document.getElementById('repCount');
 
 
-    const reps =
-      document
-        .getElementById('repCount')
-        .value
-        .trim();
+    const countryEmpty =
+      country.value.trim() === '';
+
+    const embassyEmpty =
+      embassy.value.trim() === '';
+
+    const repsEmpty =
+      repCount.value.trim() === '';
 
 
-    error(
+    toggleErr(
       'err-country',
-      country === ''
+      countryEmpty
     );
 
-
-    error(
+    toggleErr(
       'err-embassy',
-      embassy === ''
+      embassyEmpty
     );
 
-
-    error(
+    toggleErr(
       'err-repCount',
-      reps === ''
+      repsEmpty
     );
 
 
     if(
-      country === '' ||
-      embassy === '' ||
-      reps === ''
+      countryEmpty ||
+      embassyEmpty ||
+      repsEmpty
     ){
 
       valid = false;
@@ -2319,17 +2142,17 @@ function validateStep(step){
 
   if(step === 2){
 
-    const values =
-      getChecked('stand');
+    const ok =
+      checkedValues('stand').length > 0;
 
 
-    error(
-      'err-stand',
-      values.length === 0
+    toggleErr(
+      'err-group-stand',
+      !ok
     );
 
 
-    if(values.length === 0){
+    if(!ok){
       valid = false;
     }
 
@@ -2338,17 +2161,17 @@ function validateStep(step){
 
   if(step === 3){
 
-    const values =
-      getChecked('interactive');
+    const ok =
+      checkedValues('interactive').length > 0;
 
 
-    error(
-      'err-interactive',
-      values.length === 0
+    toggleErr(
+      'err-group-interactive',
+      !ok
     );
 
 
-    if(values.length === 0){
+    if(!ok){
       valid = false;
     }
 
@@ -2359,12 +2182,12 @@ function validateStep(step){
 
     const selected =
       document.querySelector(
-        '#group-stage .choice-button.selected'
+        '#group-stage .choice-item.selected'
       );
 
 
-    error(
-      'err-stage',
+    toggleErr(
+      'err-group-stage',
       !selected
     );
 
@@ -2373,30 +2196,22 @@ function validateStep(step){
 
       valid = false;
 
-    }else{
+    }else if(
+      selected.dataset.value === 'Yes'
+    ){
 
-      if(
-        selected.dataset.value === 'Yes'
-      ){
-
-        const performances =
-          getChecked('performance');
+      const ok =
+        checkedValues('performance').length > 0;
 
 
-        error(
-          'err-performance',
-          performances.length === 0
-        );
+      toggleErr(
+        'err-group-performance',
+        !ok
+      );
 
 
-        if(
-          performances.length === 0
-        ){
-
-          valid = false;
-
-        }
-
+      if(!ok){
+        valid = false;
       }
 
     }
@@ -2406,20 +2221,18 @@ function validateStep(step){
 
   if(step === 5){
 
-    const values =
-      getChecked('branding');
+    const ok =
+      checkedValues('branding').length > 0;
 
 
-    error(
-      'err-branding',
-      values.length === 0
+    toggleErr(
+      'err-group-branding',
+      !ok
     );
 
 
-    if(values.length === 0){
-
+    if(!ok){
       valid = false;
-
     }
 
   }
@@ -2434,78 +2247,21 @@ function validateStep(step){
 }
 
 
-/************************************************
- STAGE
-************************************************/
+/* =====================================================
+   ERROR
+===================================================== */
 
-function selectStage(element){
+function toggleErr(id, show){
 
-  document
-    .querySelectorAll(
-      '#group-stage .choice-button'
-    )
-    .forEach(function(item){
-
-      item.classList.remove(
-        'selected'
-      );
-
-    });
+  const el =
+    document.getElementById(id);
 
 
-  element.classList.add(
-    'selected'
-  );
+  if(el){
 
-
-  error(
-    'err-stage',
-    false
-  );
-
-
-  const block =
-    document.getElementById(
-      'performanceBlock'
-    );
-
-
-  if(
-    element.dataset.value === 'Yes'
-  ){
-
-    block.classList.add('show');
-
-  }else{
-
-    block.classList.remove('show');
-
-
-    document
-      .querySelectorAll(
-        '#group-performance .option'
-      )
-      .forEach(function(option){
-
-        option.classList.remove(
-          'selected'
-        );
-
-
-        const input =
-          option.querySelector(
-            'input'
-          );
-
-
-        input.checked = false;
-
-      });
-
-
-    error(
-      'err-performance',
-      false
+    el.classList.toggle(
+      'show',
+      show
     );
 
   }
@@ -2513,9 +2269,9 @@ function selectStage(element){
 }
 
 
-/************************************************
- FILE
-************************************************/
+/* =====================================================
+   FILE
+===================================================== */
 
 const fileInput =
   document.getElementById(
@@ -2523,157 +2279,171 @@ const fileInput =
   );
 
 
+const fileChip =
+  document.getElementById(
+    'fileChip'
+  );
+
+
+const fileName =
+  document.getElementById(
+    'fileName'
+  );
+
+
+const uploadBox =
+  document.getElementById(
+    'uploadBox'
+  );
+
+
 fileInput.addEventListener(
   'change',
-  function(){
-
-    if(
-      !fileInput.files ||
-      fileInput.files.length === 0
-    ){
-
-      return;
-
-    }
-
-
-    const file =
-      fileInput.files[0];
-
-
-    const MAX_SIZE =
-      8 * 1024 * 1024;
-
-
-    const allowed = [
-      'image/jpeg',
-      'image/png',
-      'application/pdf'
-    ];
-
-
-    if(file.size > MAX_SIZE){
-
-      alert(
-        'File size must not exceed 8 MB.'
-      );
-
-      fileInput.value = '';
-
-      return;
-
-    }
-
-
-    if(
-      !allowed.includes(
-        file.type
-      )
-    ){
-
-      alert(
-        'Only JPG, PNG and PDF files are accepted.'
-      );
-
-      fileInput.value = '';
-
-      return;
-
-    }
-
-
-    document
-      .getElementById('fileName')
-      .textContent =
-      file.name;
-
-
-    document
-      .getElementById('fileBox')
-      .classList.add('show');
-
-
-    document
-      .getElementById('uploadBox')
-      .style.display =
-      'none';
-
-
-    error(
-      'err-file',
-      false
-    );
-
-  }
+  handleFile
 );
 
 
-/************************************************
- REMOVE FILE
-************************************************/
+function handleFile(){
 
-function removeFile(event){
+  if(
+    !fileInput.files ||
+    fileInput.files.length === 0
+  ){
 
-  event.preventDefault();
+    return;
+
+  }
+
+
+  const file =
+    fileInput.files[0];
+
+
+  const maxSize =
+    10 * 1024 * 1024;
+
+
+  if(file.size > maxSize){
+
+    alert(
+      'File size must not exceed 10 MB.'
+    );
+
+
+    fileInput.value = '';
+
+    return;
+
+  }
+
+
+  const allowedTypes = [
+
+    'image/jpeg',
+
+    'image/png',
+
+    'application/pdf'
+
+  ];
+
+
+  if(
+    !allowedTypes.includes(
+      file.type
+    )
+  ){
+
+    alert(
+      'Only JPG, PNG and PDF files are accepted.'
+    );
+
+
+    fileInput.value = '';
+
+    return;
+
+  }
+
+
+  fileName.textContent =
+    file.name;
+
+
+  fileChip.classList.add(
+    'show'
+  );
+
+
+  uploadBox.style.display =
+    'none';
+
+
+  document
+    .getElementById(
+      'err-file'
+    )
+    .classList.remove(
+      'show'
+    );
+
+}
+
+
+function clearFile(e){
+
+  e.preventDefault();
+
 
   fileInput.value = '';
 
 
-  document
-    .getElementById('fileBox')
-    .classList.remove('show');
+  fileChip.classList.remove(
+    'show'
+  );
 
 
-  document
-    .getElementById('uploadBox')
-    .style.display =
+  uploadBox.style.display =
     'flex';
 
 }
 
 
-/************************************************
- FILE → BASE64
-************************************************/
+/* =====================================================
+   FILE TO BASE64
+===================================================== */
 
 function fileToBase64(file){
 
   return new Promise(
-    function(resolve,reject){
+    (resolve, reject) => {
 
       const reader =
         new FileReader();
 
 
-      reader.onload =
-        function(){
+      reader.onload = () => {
 
-          const result =
-            reader.result;
-
-
-          const base64 =
-            result.split(',')[1];
+        const result =
+          reader.result;
 
 
-          resolve(base64);
+        const base64 =
+          result.split(',')[1];
 
-        };
+
+        resolve(base64);
+
+      };
 
 
       reader.onerror =
-        function(){
-
-          reject(
-            new Error(
-              'File could not be read.'
-            )
-          );
-
-        };
+        reject;
 
 
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(
+        file
+      );
 
     }
   );
@@ -2681,20 +2451,19 @@ function fileToBase64(file){
 }
 
 
-/************************************************
- SUBMIT
-************************************************/
+/* =====================================================
+   SUBMIT
+===================================================== */
 
 async function submitForm(){
 
   const file =
-    fileInput.files &&
     fileInput.files[0];
 
 
   if(!file){
 
-    error(
+    toggleErr(
       'err-file',
       true
     );
@@ -2704,7 +2473,7 @@ async function submitForm(){
   }
 
 
-  error(
+  toggleErr(
     'err-file',
     false
   );
@@ -2718,166 +2487,253 @@ async function submitForm(){
 
   button.disabled = true;
 
-  button.textContent =
+  button.innerHTML =
     'Submitting…';
 
 
   try{
 
+    /* -----------------------------------------------
+       Convert file to Base64
+    ------------------------------------------------ */
+
     const base64 =
-      await fileToBase64(file);
-
-
-    const stage =
-      document.querySelector(
-        '#group-stage .choice-button.selected'
+      await fileToBase64(
+        file
       );
 
+
+    /* -----------------------------------------------
+       Stage selection
+    ------------------------------------------------ */
+
+    const selectedStage =
+      document.querySelector(
+        '#group-stage .choice-item.selected'
+      );
+
+
+    /* -----------------------------------------------
+       Prepare data
+    ------------------------------------------------ */
 
     const data = {
 
       country:
         document
-          .getElementById('country')
+          .getElementById(
+            'country'
+          )
           .value
           .trim(),
 
 
       embassy:
         document
-          .getElementById('embassy')
+          .getElementById(
+            'embassy'
+          )
           .value
           .trim(),
 
 
       repCount:
         document
-          .getElementById('repCount')
+          .getElementById(
+            'repCount'
+          )
           .value
           .trim(),
 
 
       stand:
-        getChecked('stand'),
+        checkedValues(
+          'stand'
+        ),
 
 
       interactive:
-        getChecked('interactive'),
+        checkedValues(
+          'interactive'
+        ),
 
 
       stage:
-        stage
-          ? stage.dataset.value
+        selectedStage
+          ? selectedStage.dataset.value
           : '',
 
 
       performance:
-        getChecked('performance'),
+        checkedValues(
+          'performance'
+        ),
 
 
       branding:
-        getChecked('branding'),
+        checkedValues(
+          'branding'
+        ),
 
 
       notes:
         document
-          .getElementById('notes')
+          .getElementById(
+            'notes'
+          )
           .value
           .trim(),
 
 
-      file:{
+      file: {
 
-        name:file.name,
+        name:
+          file.name,
 
-        mimeType:file.type,
+        mimeType:
+          file.type,
 
-        size:file.size,
-
-        data:base64
+        data:
+          base64
 
       }
 
     };
 
 
-    google.script.run
+    /* -----------------------------------------------
+       Send to Google Apps Script
+    ------------------------------------------------ */
 
-      .withSuccessHandler(
-        function(response){
+    const response =
+      await fetch(
+        API_URL,
+        {
 
-          if(
-            response &&
-            response.success
-          ){
+          method:'POST',
 
-            document
-              .getElementById(
-                'reference'
-              )
-              .textContent =
-              'Reference: ' +
-              response.reference;
+          headers:{
 
+            'Content-Type':
+              'text/plain;charset=utf-8'
 
-            goTo(7);
+          },
 
-
-          }else{
-
-            throw new Error(
-              'Submission failed.'
-            );
-
-          }
+          body:
+            JSON.stringify(
+              data
+            )
 
         }
-      )
+      );
 
 
-      .withFailureHandler(
-        function(err){
+    /* -----------------------------------------------
+       Read response
+    ------------------------------------------------ */
 
-          console.error(err);
-
-          alert(
-            'Registration could not be submitted. Please try again.'
-          );
+    const responseText =
+      await response.text();
 
 
-          button.disabled = false;
-
-          button.textContent =
-            'Submit →';
-
-        }
-      )
+    let result;
 
 
-      .submitForm(data);
+    try{
+
+      result =
+        JSON.parse(
+          responseText
+        );
+
+    }catch(parseError){
+
+      console.error(
+        'SERVER RESPONSE:',
+        responseText
+      );
+
+      throw new Error(
+        'Invalid response from server.'
+      );
+
+    }
 
 
-  }catch(err){
+    /* -----------------------------------------------
+       Success
+    ------------------------------------------------ */
 
-    console.error(err);
+    if(
+      result &&
+      result.success
+    ){
+
+      document
+        .getElementById(
+          'refChip'
+        )
+        .textContent =
+        'Reference: ' +
+        result.reference;
+
+
+      goTo(7);
+
+
+      return;
+
+    }
+
+
+    /* -----------------------------------------------
+       Server error
+    ------------------------------------------------ */
+
+    throw new Error(
+
+      result &&
+      result.error
+
+        ? result.error
+
+        : 'Submission failed.'
+
+    );
+
+
+  }catch(error){
+
+    console.error(
+      'SUBMISSION ERROR:',
+      error
+    );
 
 
     alert(
-      'An error occurred while preparing the submission.'
+      'Registration could not be submitted.\n\n' +
+      'Please try again.'
     );
 
 
     button.disabled = false;
 
-    button.textContent =
-      'Submit →';
+
+    button.innerHTML =
+      'Submit <span>→</span>';
 
   }
 
 }
 
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+updateProgress(0);
+
 </script>
 
 </body>
-
 </html>
