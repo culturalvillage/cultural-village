@@ -1,0 +1,2883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
+
+<meta
+  name="theme-color"
+  content="#0d1b2a"
+>
+
+<title>
+Cultural Village 2026 — Embassy Participation Form
+</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+:root{
+
+  --navy:#0d1b2a;
+  --navy2:#122437;
+  --panel:#16283a;
+  --field:#1b3043;
+
+  --border:#34495c;
+  --border2:#4a6073;
+
+  --white:#ffffff;
+  --text:#edf2f6;
+  --muted:#aebbc6;
+  --faint:#718292;
+
+  --gold:#c9a45c;
+  --gold2:#b88f42;
+
+  --success:#48b27a;
+  --danger:#df6872;
+}
+
+
+html,
+body{
+
+  margin:0;
+  padding:0;
+
+  width:100%;
+  min-height:100%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b1724 0%,
+      #0f1f2e 50%,
+      #101c29 100%
+    );
+
+  color:var(--text);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing:antialiased;
+}
+
+
+body{
+
+  min-height:100vh;
+
+  overflow-x:hidden;
+}
+
+
+/************************************************
+ PROGRESS
+************************************************/
+
+.progress{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:4px;
+
+  background:#1b2b39;
+
+  z-index:999;
+}
+
+
+.progress-bar{
+
+  height:100%;
+
+  width:0%;
+
+  background:var(--gold);
+
+  transition:
+    width .35s ease;
+}
+
+
+/************************************************
+ CONTAINER
+************************************************/
+
+.wrapper{
+
+  width:100%;
+
+  max-width:720px;
+
+  margin:0 auto;
+
+  padding:
+    55px 20px 70px;
+}
+
+
+.container{
+
+  width:100%;
+}
+
+
+/************************************************
+ STEPS
+************************************************/
+
+.step{
+
+  display:none;
+
+  animation:
+    fade .3s ease;
+}
+
+
+.step.active{
+  display:block;
+}
+
+
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/************************************************
+ COVER
+************************************************/
+
+.eyebrow{
+
+  color:var(--gold);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+
+h1{
+
+  margin:0 0 18px;
+
+  color:var(--white);
+
+  font-size:
+    clamp(32px,7vw,52px);
+
+  line-height:1.05;
+
+  letter-spacing:-1.5px;
+}
+
+
+.meta{
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  margin-bottom:26px;
+}
+
+
+.meta .gold{
+  color:var(--gold);
+}
+
+
+.cover-text{
+
+  color:var(--muted);
+
+  font-size:15px;
+
+  line-height:1.75;
+
+  margin-bottom:16px;
+}
+
+
+/************************************************
+ STEP HEADER
+************************************************/
+
+.step-number{
+
+  color:var(--faint);
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  margin-bottom:12px;
+}
+
+
+.step-title{
+
+  margin:0 0 30px;
+
+  color:var(--white);
+
+  font-size:
+    clamp(21px,5vw,28px);
+
+  line-height:1.2;
+
+  font-weight:700;
+}
+
+
+.required{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:18px;
+  height:18px;
+
+  margin-left:7px;
+
+  border-radius:50%;
+
+  background:#293b4c;
+
+  color:#cbd4db;
+
+  font-size:11px;
+
+  vertical-align:3px;
+}
+
+
+/************************************************
+ FIELDS
+************************************************/
+
+.field{
+
+  margin-bottom:24px;
+}
+
+
+label.field-label{
+
+  display:block;
+
+  margin-bottom:9px;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:.6px;
+
+  text-transform:uppercase;
+}
+
+
+input[type=text],
+input[type=number],
+textarea{
+
+  width:100%;
+
+  min-height:50px;
+
+  padding:14px 15px;
+
+  border:
+    1.5px solid
+    var(--border);
+
+  border-radius:8px;
+
+  outline:none;
+
+  background:var(--field);
+
+  color:var(--white);
+
+  font-family:inherit;
+
+  font-size:16px;
+
+  -webkit-appearance:none;
+
+  transition:
+    border .15s ease,
+    background .15s ease;
+}
+
+
+textarea{
+
+  min-height:125px;
+
+  resize:vertical;
+}
+
+
+input:focus,
+textarea:focus{
+
+  border-color:var(--gold);
+
+  background:#20384c;
+}
+
+
+input::placeholder,
+textarea::placeholder{
+
+  color:var(--faint);
+}
+
+
+/************************************************
+ CHECKBOX
+************************************************/
+
+.options{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:9px;
+}
+
+
+.option{
+
+  display:flex;
+
+  align-items:center;
+
+  min-height:50px;
+
+  padding:12px 14px;
+
+  border:
+    1.5px solid
+    var(--border);
+
+  border-radius:8px;
+
+  background:var(--field);
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+
+  transition:.15s ease;
+}
+
+
+.option:active{
+
+  transform:scale(.99);
+}
+
+
+.option.selected{
+
+  border-color:var(--gold);
+
+  background:
+    rgba(201,164,92,.12);
+}
+
+
+.option input{
+
+  position:absolute;
+
+  opacity:0;
+
+  pointer-events:none;
+}
+
+
+.box{
+
+  width:19px;
+  height:19px;
+
+  flex:0 0 19px;
+
+  margin-right:13px;
+
+  border:
+    1.5px solid
+    var(--border2);
+
+  border-radius:5px;
+
+  position:relative;
+}
+
+
+.option.selected .box{
+
+  background:var(--gold);
+
+  border-color:var(--gold);
+}
+
+
+.option.selected .box:after{
+
+  content:'';
+
+  position:absolute;
+
+  left:5px;
+  top:1px;
+
+  width:5px;
+  height:10px;
+
+  border:
+    solid white;
+
+  border-width:
+    0 2px 2px 0;
+
+  transform:rotate(45deg);
+}
+
+
+.option-text{
+
+  color:var(--text);
+
+  font-size:14px;
+
+  font-weight:600;
+
+  line-height:1.4;
+}
+
+
+/************************************************
+ YES NO
+************************************************/
+
+.choice{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+}
+
+
+.choice-button{
+
+  display:flex;
+
+  align-items:center;
+
+  min-height:54px;
+
+  padding:13px 15px;
+
+  border:
+    1.5px solid
+    var(--border);
+
+  border-radius:8px;
+
+  background:var(--field);
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+
+.choice-button.selected{
+
+  border-color:var(--gold);
+
+  background:
+    rgba(201,164,92,.12);
+}
+
+
+.letter{
+
+  width:27px;
+  height:27px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-right:13px;
+
+  border-radius:6px;
+
+  background:#293b4c;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+
+.choice-button.selected .letter{
+
+  background:var(--gold);
+
+  color:white;
+}
+
+
+/************************************************
+ CONDITIONAL
+************************************************/
+
+.conditional{
+
+  display:none;
+
+  margin-top:22px;
+}
+
+
+.conditional.show{
+
+  display:block;
+}
+
+
+/************************************************
+ UPLOAD
+************************************************/
+
+.upload{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:170px;
+
+  padding:25px;
+
+  text-align:center;
+
+  border:
+    1.5px dashed
+    var(--border2);
+
+  border-radius:10px;
+
+  background:var(--field);
+
+  cursor:pointer;
+}
+
+
+.upload input{
+  display:none;
+}
+
+
+.upload-title{
+
+  margin-top:10px;
+
+  font-size:14px;
+
+  font-weight:700;
+}
+
+
+.upload-sub{
+
+  margin-top:8px;
+
+  color:var(--faint);
+
+  font-size:12px;
+
+  line-height:1.5;
+}
+
+
+.file{
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-top:10px;
+
+  padding:12px 14px;
+
+  border:
+    1.5px solid
+    var(--gold);
+
+  border-radius:8px;
+
+  background:var(--field);
+
+  font-size:13px;
+}
+
+
+.file.show{
+  display:flex;
+}
+
+
+.file button{
+
+  border:0;
+
+  background:none;
+
+  color:var(--muted);
+
+  font-size:18px;
+
+  cursor:pointer;
+}
+
+
+/************************************************
+ ERROR
+************************************************/
+
+.error{
+
+  display:none;
+
+  margin-top:8px;
+
+  color:var(--danger);
+
+  font-size:12px;
+
+  font-weight:600;
+}
+
+
+.error.show{
+  display:block;
+}
+
+
+/************************************************
+ BUTTONS
+************************************************/
+
+.navigation{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-top:30px;
+}
+
+
+.primary{
+
+  min-height:50px;
+
+  padding:
+    13px 24px;
+
+  border:0;
+
+  border-radius:8px;
+
+  background:var(--gold);
+
+  color:#101820;
+
+  font-family:inherit;
+
+  font-size:14px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+
+.primary:active{
+
+  transform:scale(.98);
+}
+
+
+.primary:disabled{
+
+  opacity:.6;
+
+  cursor:wait;
+}
+
+
+.secondary{
+
+  min-height:50px;
+
+  padding:
+    10px 12px;
+
+  border:0;
+
+  background:none;
+
+  color:var(--muted);
+
+  font-family:inherit;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+
+/************************************************
+ SUCCESS
+************************************************/
+
+.success-icon{
+
+  width:58px;
+  height:58px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:22px;
+
+  border:
+    1.5px solid
+    var(--gold);
+
+  border-radius:50%;
+
+  background:
+    rgba(201,164,92,.12);
+}
+
+
+.success-title{
+
+  margin:0 0 14px;
+
+  color:white;
+
+  font-size:31px;
+
+  font-weight:800;
+}
+
+
+.success-text{
+
+  color:var(--muted);
+
+  font-size:15px;
+
+  line-height:1.7;
+}
+
+
+.reference{
+
+  display:inline-block;
+
+  margin-top:20px;
+
+  padding:
+    11px 15px;
+
+  border:
+    1.5px solid
+    var(--border);
+
+  border-radius:7px;
+
+  background:var(--field);
+
+  color:var(--gold);
+
+  font-family:
+    monospace;
+
+  font-size:13px;
+
+  letter-spacing:.5px;
+}
+
+
+/************************************************
+ MOBILE
+************************************************/
+
+@media(max-width:600px){
+
+  .wrapper{
+
+    padding:
+      45px 16px 50px;
+  }
+
+
+  h1{
+
+    font-size:36px;
+
+    letter-spacing:-1px;
+  }
+
+
+  .cover-text{
+
+    font-size:14px;
+
+    line-height:1.7;
+  }
+
+
+  .navigation{
+
+    width:100%;
+  }
+
+
+  .primary{
+
+    flex:1;
+  }
+
+
+  .secondary{
+
+    flex:0 0 auto;
+  }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="progress">
+
+  <div
+    class="progress-bar"
+    id="progress">
+  </div>
+
+</div>
+
+
+<div class="wrapper">
+
+<div class="container">
+
+
+<!-- ==================================================
+ STEP 0
+================================================== -->
+
+<section
+  class="step active"
+  data-step="0"
+>
+
+<div class="eyebrow">
+CULTURAL VILLAGE 2026
+</div>
+
+
+<h1>
+Embassy Participation Form
+</h1>
+
+
+<div class="meta">
+
+27–30 October 2026
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+<span class="gold">
+Baku, Azerbaijan
+</span>
+
+</div>
+
+
+<p class="cover-text">
+
+Cultural Village is an open-air cultural festival
+bringing together embassies and international
+institutions to showcase national culture,
+arts, traditions and creative heritage.
+
+</p>
+
+
+<p class="cover-text">
+
+This form collects the information required for
+country stands, cultural activities, stage
+performances, exhibition materials and visitor
+engagement.
+
+</p>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  onclick="goTo(1)"
+>
+
+Start
+&nbsp; →
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ STEP 1
+================================================== -->
+
+<section
+  class="step"
+  data-step="1"
+>
+
+<div class="step-number">
+STEP 1 OF 6
+</div>
+
+
+<h2 class="step-title">
+Embassy & Contact Information
+</h2>
+
+
+<div class="field">
+
+<label class="field-label">
+Country <span class="required">*</span>
+</label>
+
+<input
+  id="country"
+  type="text"
+  autocomplete="country"
+  placeholder="e.g. Azerbaijan"
+>
+
+<div
+  class="error"
+  id="err-country"
+>
+Please enter the country name.
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label class="field-label">
+Embassy / Institution
+<span class="required">*</span>
+</label>
+
+<input
+  id="embassy"
+  type="text"
+  autocomplete="organization"
+  placeholder="e.g. Embassy of Azerbaijan"
+>
+
+<div
+  class="error"
+  id="err-embassy"
+>
+Please enter the embassy or institution name.
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label class="field-label">
+Number of Representatives
+<span class="required">*</span>
+</label>
+
+<input
+  id="repCount"
+  type="number"
+  inputmode="numeric"
+  min="1"
+  max="999"
+  placeholder="e.g. 4"
+>
+
+<div
+  class="error"
+  id="err-repCount"
+>
+Please enter the number of representatives.
+</div>
+
+</div>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  onclick="validateStep(1)"
+>
+Next Page →
+</button>
+
+<button
+  class="secondary"
+  onclick="goTo(0)"
+>
+Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ STEP 2
+================================================== -->
+
+<section
+  class="step"
+  data-step="2"
+>
+
+<div class="step-number">
+STEP 2 OF 6
+</div>
+
+
+<h2 class="step-title">
+Country Stand <span class="required">*</span>
+</h2>
+
+
+<div
+  class="options"
+  id="group-stand"
+>
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Cultural heritage"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Cultural heritage
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Traditional costumes"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Traditional costumes
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Handicrafts"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Handicrafts
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Music & instruments"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Music & instruments
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Culinary culture"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Culinary culture
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Tourism"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Tourism
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="National art"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+National art
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Other"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Other
+</span>
+
+</label>
+
+</div>
+
+
+<div
+  class="error"
+  id="err-stand"
+>
+Please select at least one option.
+</div>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  onclick="validateStep(2)"
+>
+Next Page →
+</button>
+
+<button
+  class="secondary"
+  onclick="goTo(1)"
+>
+Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ STEP 3
+================================================== -->
+
+<section
+  class="step"
+  data-step="3"
+>
+
+<div class="step-number">
+STEP 3 OF 6
+</div>
+
+
+<h2 class="step-title">
+Interactive Experience
+<span class="required">*</span>
+</h2>
+
+
+<div
+  class="options"
+  id="group-interactive"
+>
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Workshop"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Workshop
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Craft"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Craft
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Traditional Game"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Traditional Game
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Music"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Music
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Dance"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Dance
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Demonstration"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Demonstration
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Other"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Other
+</span>
+
+</label>
+
+</div>
+
+
+<div
+  class="error"
+  id="err-interactive"
+>
+Please select at least one option.
+</div>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  onclick="validateStep(3)"
+>
+Next Page →
+</button>
+
+<button
+  class="secondary"
+  onclick="goTo(2)"
+>
+Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ STEP 4
+================================================== -->
+
+<section
+  class="step"
+  data-step="4"
+>
+
+<div class="step-number">
+STEP 4 OF 6
+</div>
+
+
+<h2 class="step-title">
+Stage Programme
+<span class="required">*</span>
+</h2>
+
+
+<div
+  class="choice"
+  id="group-stage"
+>
+
+<div
+  class="choice-button"
+  data-value="Yes"
+  onclick="selectStage(this)"
+>
+
+<span class="letter">
+A
+</span>
+
+<span>
+Yes
+</span>
+
+</div>
+
+
+<div
+  class="choice-button"
+  data-value="No"
+  onclick="selectStage(this)"
+>
+
+<span class="letter">
+B
+</span>
+
+<span>
+No
+</span>
+
+</div>
+
+</div>
+
+
+<div
+  class="error"
+  id="err-stage"
+>
+Please select an option.
+</div>
+
+
+<div
+  class="conditional"
+  id="performanceBlock"
+>
+
+<label class="field-label">
+Performance Type
+<span class="required">*</span>
+</label>
+
+
+<div
+  class="options"
+  id="group-performance"
+>
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Traditional Dance"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Traditional Dance
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Music"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Music
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Vocal"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Vocal
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Instrumental"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Instrumental
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Costume Presentation"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Costume Presentation
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Other"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Other
+</span>
+
+</label>
+
+</div>
+
+
+<div
+  class="error"
+  id="err-performance"
+>
+Please select at least one performance type.
+</div>
+
+</div>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  onclick="validateStep(4)"
+>
+Next Page →
+</button>
+
+<button
+  class="secondary"
+  onclick="goTo(3)"
+>
+Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ STEP 5
+================================================== -->
+
+<section
+  class="step"
+  data-step="5"
+>
+
+<div class="step-number">
+STEP 5 OF 6
+</div>
+
+
+<h2 class="step-title">
+Display & Branding Materials
+<span class="required">*</span>
+</h2>
+
+
+<div
+  class="options"
+  id="group-branding"
+>
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Roll-up/banner"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Roll-up / Banner
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Posters"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Posters
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Brochures"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Brochures
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Video"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Video
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Handicrafts"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Handicrafts
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Costumes"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Costumes
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Souvenirs"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Souvenirs
+</span>
+
+</label>
+
+
+<label class="option">
+
+<input
+  type="checkbox"
+  value="Other"
+>
+
+<span class="box"></span>
+
+<span class="option-text">
+Other
+</span>
+
+</label>
+
+</div>
+
+
+<div
+  class="error"
+  id="err-branding"
+>
+Please select at least one option.
+</div>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  onclick="validateStep(5)"
+>
+Next Page →
+</button>
+
+<button
+  class="secondary"
+  onclick="goTo(4)"
+>
+Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ STEP 6
+================================================== -->
+
+<section
+  class="step"
+  data-step="6"
+>
+
+<div class="step-number">
+STEP 6 OF 6
+</div>
+
+
+<h2 class="step-title">
+Final Information
+</h2>
+
+
+<div class="field">
+
+<label class="field-label">
+Photo / Sketch
+<span class="required">*</span>
+</label>
+
+
+<label
+  class="upload"
+  id="uploadBox"
+>
+
+<input
+  type="file"
+  id="fileInput"
+  accept="image/jpeg,image/png,application/pdf"
+>
+
+
+<svg
+  width="30"
+  height="30"
+  viewBox="0 0 24 24"
+  fill="none"
+>
+
+<path
+  d="M12 16V4M12 4L7 9M12 4L17 9"
+  stroke="#aebbc6"
+  stroke-width="1.7"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+/>
+
+<path
+  d="M4 16V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V16"
+  stroke="#aebbc6"
+  stroke-width="1.7"
+  stroke-linecap="round"
+/>
+
+</svg>
+
+
+<div class="upload-title">
+Tap to choose a file
+</div>
+
+
+<div class="upload-sub">
+Maximum 8 MB<br>
+JPG, PNG or PDF
+</div>
+
+</label>
+
+
+<div
+  class="file"
+  id="fileBox"
+>
+
+<span id="fileName">
+</span>
+
+<button
+  onclick="removeFile(event)"
+>
+×
+</button>
+
+</div>
+
+
+<div
+  class="error"
+  id="err-file"
+>
+Please attach a photo or sketch.
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label class="field-label">
+Additional Requests & Suggestions
+</label>
+
+<textarea
+  id="notes"
+  placeholder="Technical requirements, space preferences or additional notes..."
+></textarea>
+
+</div>
+
+
+<div class="navigation">
+
+<button
+  class="primary"
+  id="submitButton"
+  onclick="submitForm()"
+>
+Submit →
+</button>
+
+<button
+  class="secondary"
+  onclick="goTo(5)"
+>
+Back
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+ SUCCESS
+================================================== -->
+
+<section
+  class="step"
+  data-step="7"
+>
+
+<div class="success-icon">
+
+<svg
+  width="25"
+  height="25"
+  viewBox="0 0 24 24"
+  fill="none"
+>
+
+<path
+  d="M4 12.5L9.5 18L20 6"
+  stroke="#c9a45c"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+/>
+
+</svg>
+
+</div>
+
+
+<h2 class="success-title">
+Registration Received
+</h2>
+
+
+<p class="success-text">
+
+Thank you for registering your embassy's
+participation in Cultural Village 2026.
+
+Our team will review your submission and
+contact you regarding stand assignment
+and technical details.
+
+</p>
+
+
+<div
+  class="reference"
+  id="reference"
+>
+</div>
+
+</section>
+
+
+</div>
+</div>
+
+
+
+<script>
+
+/************************************************
+ GLOBAL
+************************************************/
+
+let currentStep = 0;
+
+const TOTAL_STEPS = 6;
+
+
+/************************************************
+ NAVIGATION
+************************************************/
+
+function goTo(step){
+
+  document
+    .querySelectorAll('.step')
+    .forEach(function(el){
+
+      el.classList.remove('active');
+
+    });
+
+
+  const target =
+    document.querySelector(
+      '.step[data-step="' +
+      step +
+      '"]'
+    );
+
+
+  if(!target){
+    return;
+  }
+
+
+  target.classList.add('active');
+
+  currentStep = step;
+
+
+  updateProgress(step);
+
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
+}
+
+
+function updateProgress(step){
+
+  let percent = 0;
+
+
+  if(step > 0 && step <= TOTAL_STEPS){
+
+    percent =
+      (step / TOTAL_STEPS) * 100;
+
+  }
+
+
+  document
+    .getElementById('progress')
+    .style.width =
+    percent + '%';
+
+}
+
+
+/************************************************
+ CHECKBOXES
+************************************************/
+
+document
+  .querySelectorAll('.option')
+  .forEach(function(option){
+
+    option.addEventListener(
+      'click',
+      function(event){
+
+        event.preventDefault();
+
+        const input =
+          option.querySelector(
+            'input'
+          );
+
+
+        input.checked =
+          !input.checked;
+
+
+        option.classList.toggle(
+          'selected',
+          input.checked
+        );
+
+      }
+    );
+
+  });
+
+
+/************************************************
+ GET CHECKED
+************************************************/
+
+function getChecked(group){
+
+  return Array
+    .from(
+      document.querySelectorAll(
+        '#group-' +
+        group +
+        ' input:checked'
+      )
+    )
+    .map(function(input){
+
+      return input.value;
+
+    });
+
+}
+
+
+/************************************************
+ ERROR
+************************************************/
+
+function error(id, show){
+
+  const el =
+    document.getElementById(id);
+
+  if(!el){
+    return;
+  }
+
+  el.classList.toggle(
+    'show',
+    show
+  );
+
+}
+
+
+/************************************************
+ VALIDATION
+************************************************/
+
+function validateStep(step){
+
+  let valid = true;
+
+
+  if(step === 1){
+
+    const country =
+      document
+        .getElementById('country')
+        .value
+        .trim();
+
+
+    const embassy =
+      document
+        .getElementById('embassy')
+        .value
+        .trim();
+
+
+    const reps =
+      document
+        .getElementById('repCount')
+        .value
+        .trim();
+
+
+    error(
+      'err-country',
+      country === ''
+    );
+
+
+    error(
+      'err-embassy',
+      embassy === ''
+    );
+
+
+    error(
+      'err-repCount',
+      reps === ''
+    );
+
+
+    if(
+      country === '' ||
+      embassy === '' ||
+      reps === ''
+    ){
+
+      valid = false;
+
+    }
+
+  }
+
+
+  if(step === 2){
+
+    const values =
+      getChecked('stand');
+
+
+    error(
+      'err-stand',
+      values.length === 0
+    );
+
+
+    if(values.length === 0){
+      valid = false;
+    }
+
+  }
+
+
+  if(step === 3){
+
+    const values =
+      getChecked('interactive');
+
+
+    error(
+      'err-interactive',
+      values.length === 0
+    );
+
+
+    if(values.length === 0){
+      valid = false;
+    }
+
+  }
+
+
+  if(step === 4){
+
+    const selected =
+      document.querySelector(
+        '#group-stage .choice-button.selected'
+      );
+
+
+    error(
+      'err-stage',
+      !selected
+    );
+
+
+    if(!selected){
+
+      valid = false;
+
+    }else{
+
+      if(
+        selected.dataset.value === 'Yes'
+      ){
+
+        const performances =
+          getChecked('performance');
+
+
+        error(
+          'err-performance',
+          performances.length === 0
+        );
+
+
+        if(
+          performances.length === 0
+        ){
+
+          valid = false;
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+  if(step === 5){
+
+    const values =
+      getChecked('branding');
+
+
+    error(
+      'err-branding',
+      values.length === 0
+    );
+
+
+    if(values.length === 0){
+
+      valid = false;
+
+    }
+
+  }
+
+
+  if(valid){
+
+    goTo(step + 1);
+
+  }
+
+}
+
+
+/************************************************
+ STAGE
+************************************************/
+
+function selectStage(element){
+
+  document
+    .querySelectorAll(
+      '#group-stage .choice-button'
+    )
+    .forEach(function(item){
+
+      item.classList.remove(
+        'selected'
+      );
+
+    });
+
+
+  element.classList.add(
+    'selected'
+  );
+
+
+  error(
+    'err-stage',
+    false
+  );
+
+
+  const block =
+    document.getElementById(
+      'performanceBlock'
+    );
+
+
+  if(
+    element.dataset.value === 'Yes'
+  ){
+
+    block.classList.add('show');
+
+  }else{
+
+    block.classList.remove('show');
+
+
+    document
+      .querySelectorAll(
+        '#group-performance .option'
+      )
+      .forEach(function(option){
+
+        option.classList.remove(
+          'selected'
+        );
+
+
+        const input =
+          option.querySelector(
+            'input'
+          );
+
+
+        input.checked = false;
+
+      });
+
+
+    error(
+      'err-performance',
+      false
+    );
+
+  }
+
+}
+
+
+/************************************************
+ FILE
+************************************************/
+
+const fileInput =
+  document.getElementById(
+    'fileInput'
+  );
+
+
+fileInput.addEventListener(
+  'change',
+  function(){
+
+    if(
+      !fileInput.files ||
+      fileInput.files.length === 0
+    ){
+
+      return;
+
+    }
+
+
+    const file =
+      fileInput.files[0];
+
+
+    const MAX_SIZE =
+      8 * 1024 * 1024;
+
+
+    const allowed = [
+      'image/jpeg',
+      'image/png',
+      'application/pdf'
+    ];
+
+
+    if(file.size > MAX_SIZE){
+
+      alert(
+        'File size must not exceed 8 MB.'
+      );
+
+      fileInput.value = '';
+
+      return;
+
+    }
+
+
+    if(
+      !allowed.includes(
+        file.type
+      )
+    ){
+
+      alert(
+        'Only JPG, PNG and PDF files are accepted.'
+      );
+
+      fileInput.value = '';
+
+      return;
+
+    }
+
+
+    document
+      .getElementById('fileName')
+      .textContent =
+      file.name;
+
+
+    document
+      .getElementById('fileBox')
+      .classList.add('show');
+
+
+    document
+      .getElementById('uploadBox')
+      .style.display =
+      'none';
+
+
+    error(
+      'err-file',
+      false
+    );
+
+  }
+);
+
+
+/************************************************
+ REMOVE FILE
+************************************************/
+
+function removeFile(event){
+
+  event.preventDefault();
+
+  fileInput.value = '';
+
+
+  document
+    .getElementById('fileBox')
+    .classList.remove('show');
+
+
+  document
+    .getElementById('uploadBox')
+    .style.display =
+    'flex';
+
+}
+
+
+/************************************************
+ FILE → BASE64
+************************************************/
+
+function fileToBase64(file){
+
+  return new Promise(
+    function(resolve,reject){
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload =
+        function(){
+
+          const result =
+            reader.result;
+
+
+          const base64 =
+            result.split(',')[1];
+
+
+          resolve(base64);
+
+        };
+
+
+      reader.onerror =
+        function(){
+
+          reject(
+            new Error(
+              'File could not be read.'
+            )
+          );
+
+        };
+
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+}
+
+
+/************************************************
+ SUBMIT
+************************************************/
+
+async function submitForm(){
+
+  const file =
+    fileInput.files &&
+    fileInput.files[0];
+
+
+  if(!file){
+
+    error(
+      'err-file',
+      true
+    );
+
+    return;
+
+  }
+
+
+  error(
+    'err-file',
+    false
+  );
+
+
+  const button =
+    document.getElementById(
+      'submitButton'
+    );
+
+
+  button.disabled = true;
+
+  button.textContent =
+    'Submitting…';
+
+
+  try{
+
+    const base64 =
+      await fileToBase64(file);
+
+
+    const stage =
+      document.querySelector(
+        '#group-stage .choice-button.selected'
+      );
+
+
+    const data = {
+
+      country:
+        document
+          .getElementById('country')
+          .value
+          .trim(),
+
+
+      embassy:
+        document
+          .getElementById('embassy')
+          .value
+          .trim(),
+
+
+      repCount:
+        document
+          .getElementById('repCount')
+          .value
+          .trim(),
+
+
+      stand:
+        getChecked('stand'),
+
+
+      interactive:
+        getChecked('interactive'),
+
+
+      stage:
+        stage
+          ? stage.dataset.value
+          : '',
+
+
+      performance:
+        getChecked('performance'),
+
+
+      branding:
+        getChecked('branding'),
+
+
+      notes:
+        document
+          .getElementById('notes')
+          .value
+          .trim(),
+
+
+      file:{
+
+        name:file.name,
+
+        mimeType:file.type,
+
+        size:file.size,
+
+        data:base64
+
+      }
+
+    };
+
+
+    google.script.run
+
+      .withSuccessHandler(
+        function(response){
+
+          if(
+            response &&
+            response.success
+          ){
+
+            document
+              .getElementById(
+                'reference'
+              )
+              .textContent =
+              'Reference: ' +
+              response.reference;
+
+
+            goTo(7);
+
+
+          }else{
+
+            throw new Error(
+              'Submission failed.'
+            );
+
+          }
+
+        }
+      )
+
+
+      .withFailureHandler(
+        function(err){
+
+          console.error(err);
+
+          alert(
+            'Registration could not be submitted. Please try again.'
+          );
+
+
+          button.disabled = false;
+
+          button.textContent =
+            'Submit →';
+
+        }
+      )
+
+
+      .submitForm(data);
+
+
+  }catch(err){
+
+    console.error(err);
+
+
+    alert(
+      'An error occurred while preparing the submission.'
+    );
+
+
+    button.disabled = false;
+
+    button.textContent =
+      'Submit →';
+
+  }
+
+}
+
+</script>
+
+</body>
+
+</html>
